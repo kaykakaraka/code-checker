@@ -13,6 +13,7 @@ const codeChecker = (input) => {
   }
 }
 
+// checks whether there are letters in the translations that are not in the letter pairs
 const areThereExtraLetters = (translations,letterPairs) => {
   const lettersLeftOver = translations.filter((letter) => !letterPairs.includes(letter) );
   return lettersLeftOver.length == 0 ? false : true
