@@ -16,5 +16,8 @@ describe('CodeChecker for a single translation',() => {
   it ('returns no when a different code is invalid, as the letters are unchanged',() => {
     expect(checkCode([1, 1, "ac", "ac ac"])).toEqual(["no"])
   })
+  it ('returns no when a different code is invalid, as one of the letters are unchanged',() => {
+    expect(checkCode([1, 1, "ac", "ac cc"])).toEqual(["no"])
+  })
 })
 
