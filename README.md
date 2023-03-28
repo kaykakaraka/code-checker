@@ -8,6 +8,7 @@ You get a series of possible code pairs put in.
 
 You get a translation of some sets of letters.
 
+We assume that all translations are either 2 letters or 3 letters.
 
 Invalid if it does not have the two numbers at the beginning. Invalid if it does not correlate correctly with the number of codes / translations.
 

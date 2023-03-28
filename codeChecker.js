@@ -4,9 +4,8 @@ const codeChecker = (input) => {
   // create array of letters in translation pairs
   const translations = input[3].replaceAll(" ", "").split("");
   // check if there any letters in translation pairs that are not in letter pairs
-  if (checkForExtraLetters(translations, letterPairs) == ["no"]) { return [["no"]] }
-  // check if letters are unchanged 
-  console.log(translations)
+  return checkForExtraLetters(translations, letterPairs);
+  
 }
 
 const checkForExtraLetters = (translations,letterPairs) => {
