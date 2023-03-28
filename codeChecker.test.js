@@ -1,6 +1,6 @@
 const checkCode = require('./codeChecker.js')
 
-describe('CodeChecker',() => {
+describe('CodeChecker for a single translation',() => {
   it('returns yes when a simple code is valid',() => {
     expect(checkCode([1, 1, "ab", "aa bb"])).toEqual(["yes"]) 
   })
@@ -12,6 +12,9 @@ describe('CodeChecker',() => {
   })
   it ('returns no when a different code is invalid, using letters not contained in the pair',() => {
     expect(checkCode([1, 1, "ab", "cc dd"])).toEqual(["no"])
+  })
+  it ('returns no when a different code is invalid, as the letters are unchanged',() => {
+    expect(checkCode([1, 1, "ac", "ac ac"])).toEqual(["no"])
   })
 })
 
