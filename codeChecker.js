@@ -16,6 +16,7 @@ const checkForExtraLetters = (translations,letterPairs) => {
   return lettersLeftOver.length == 0 ? ["yes"] : ["no"] 
 }
 
+// methods checks whether the letters in the translation have not been changed
 const areLettersUnchanged = (translations) => {
   if (translations[0] == translations[2]) { 
     return true
