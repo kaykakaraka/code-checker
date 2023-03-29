@@ -21,3 +21,8 @@ describe('CodeChecker for a single translation',() => {
   })
 })
 
+describe('CodeChecker for two translations',() => {
+  it('returns yes yes when two translations are valid',() => {
+    expect(checkCode([1, 1, "ab", "aa bb", "aa bb"])).toEqual(["yes"]) 
+  })
+})
