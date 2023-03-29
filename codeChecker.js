@@ -1,7 +1,7 @@
 const codeChecker = (input) => {
   const answer = []
   // check number of translation pairs
-  const noOfTranslations = input[1];
+  // const noOfTranslations = input[1];
   // create array of letters in letter pairs
   const letterPairs = input[2].split("");
   // create array of letters in each translation pair
