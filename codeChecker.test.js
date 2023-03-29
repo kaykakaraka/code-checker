@@ -31,4 +31,8 @@ describe('CodeChecker for two translations',() => {
   it('returns no no when two translations are invalid',() => {
     expect(checkCode([1, 2, "ab", "ab cf", "ab dg"])).toEqual(["no", "no"]) 
   })
+  it('returns no yes when only the first translation is invalid',() => {
+    expect(checkCode([1, 2, "ab", "ab cf", "aa bb"])).toEqual(["no", "yes"]) 
+  })
+
 })

@@ -1,17 +1,20 @@
 const codeChecker = (input) => {
+  const answer = []
+  // check number of translation pairs
   const noOfTranslations = input[1];
   // create array of letters in letter pairs
   const letterPairs = input[2].split("");
-  // create array of letters in translation pairs
-  const translations = input[3].replaceAll(" ", "").split("");
-  // check if there any letters in translation pairs that are not in letter pairs
-  if (areThereExtraLetters(translations, letterPairs)) {
-    return new Array(noOfTranslations).fill("no");
-  } else if (areLettersUnchanged(translations)) {
-    return new Array(noOfTranslations).fill("no");
-  } else {
-    return new Array(noOfTranslations).fill("yes");
+  // create array of letters in each translation pair
+  const translation1 = input[3].replaceAll(" ", "").split("");
+  const ans1 = checkValidity(translation1, letterPairs)
+  answer.push(ans1)
+  if (input[4]) {
+    const translation2 = input[4].replaceAll(" ", "").split("");
+    const ans2 = checkValidity(translation2, letterPairs)
+    answer.push(ans2)
   }
+  return answer
+  // check if there any letters in translation pairs that are not in letter pairs
 }
 
 
@@ -29,6 +32,16 @@ const areLettersUnchanged = (translations) => {
     return true
   } else {
     return false 
+  }
+}
+
+const checkValidity = (translation, letterPairs) => {
+  if (areThereExtraLetters(translation, letterPairs)) {
+    return "no";
+  } else if (areLettersUnchanged(translation)) {
+    return "no";
+  } else {
+    return "yes";
   }
 }
 
