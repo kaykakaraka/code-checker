@@ -8,15 +8,12 @@ const codeChecker = (input) => {
   if (areThereExtraLetters(translations, letterPairs)) {
     return ["no"]
   } else if (areLettersUnchanged(translations)) {
-    return ["no"]
+    return new Array(noOfTranslations).fill("no");
   } else {
     return new Array(noOfTranslations).fill("yes");
   }
 }
 
-// function repeat(item,times){
-//   return new Array(times).fill(item);
-// }
 
 // checks whether there are letters in the translations that are not in the letter pairs
 const areThereExtraLetters = (translations,letterPairs) => {
